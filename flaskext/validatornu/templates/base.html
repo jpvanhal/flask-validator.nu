@@ -1,0 +1,39 @@
+{% from "_helpers.html" import render_extract, pluralize -%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Validation Error</title>
+    <link rel="stylesheet" href="{{ url_for('validatornu.static_file', filename='css/base.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('validatornu.static_file', filename='css/pygments.css') }}" type="text/css">
+</head>
+<body>
+    <h1>HTML Validation Error</h1>
+
+    <p id="summary">
+        Found <em>{{ num_errors }} {{ pluralize('error', 'errors', num_errors) }}</em> and
+        <em>{{ num_warnings }} {{ pluralize('warning', 'warnings', num_warnings) }}</em>
+        while validating <a href="{{ url }}">{{ url }}</a>.
+    </p>
+
+    <h2>Validation Output</h2>
+    <ol id="messages">
+    {% for message in messages %}
+        <li class="{{ message.type }}">
+            {% if message.data.lastLine %}
+                <a href="#line-{{ message.data.lastLine }}" class="line">Line {{ message.data.lastLine }}</a>:
+            {% endif %}
+            <span class="message">{{ message.data.message }}</span>
+            {% if message.data.extract %}
+                {{ render_extract(message.data.extract, message.data.hiliteStart,
+                                  message.data.hiliteLength) }}
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ol>
+
+    <h2>Source</h2>
+    {% code 'html' %}
+        {{- source -}}
+    {% endcode %}
+</body>
+</html>

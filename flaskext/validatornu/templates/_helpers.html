@@ -1,0 +1,15 @@
+{% macro render_extract(extract, start, length) %}
+    <pre>
+        {{- extract[:start] -}}
+        <strong>{{ extract[start:start + length] }}</strong>
+        {{- extract[start + length:] -}}
+    </pre>
+{% endmacro %}
+
+{% macro pluralize(singular, plural, count) %}
+    {%- if count == 1 -%}
+        {{ singular }}
+    {%- else -%}
+        {{ plural }}
+    {%- endif -%}
+{% endmacro %}

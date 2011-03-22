@@ -1,0 +1,61 @@
+body {
+    font-family: 'Georgia', serif;
+    font-size: 17px;
+    width: 920px;
+    margin: auto;
+}
+
+h1, h2 {
+    font-weight: normal;
+    margin: 30px 0px 10px 0px;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #eee;
+}
+
+p {
+    margin: 1em 0;
+}
+
+#messages {
+    list-style: none;
+    padding-left: 30px;
+}
+
+#messages .line {
+    font-weight: bold;
+}
+
+#messages li.error {
+    list-style-image: url('../images/error.png');
+}
+
+#messages li.warning {
+    list-style-image: url('../images/warning.png');
+}
+
+pre {
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono',
+                 'Bitstream Vera Sans Mono', monospace;
+    font-size: 0.85em;
+    line-height: 1.3em;
+    margin: 15px 0;
+    overflow: auto;
+    padding: 7px;
+}
+
+pre strong {
+    background-color: pink;
+    color: darkred;
+    font-weight: normal;
+}

@@ -1,0 +1,9 @@
+Flask-Validator.nu
+==================
+
+Adds automatic HTML5 validation to Flask with the help of the Validator.nu_
+service.
+
+.. _Validator.nu: http://validator.nu/
+
+Documentation: http://packages.python.org/Flask-Validator.nu
