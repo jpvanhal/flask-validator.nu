@@ -27,7 +27,10 @@ setup(
     author_email='janne.vanhala@gmail.com',
     description='Adds automatic HTML5 validation to Flask through Validator.nu',
     long_description=__doc__,
-    packages=['flaskext'],
+    packages=[
+        'flaskext',
+        'flaskext.validatornu',
+    ],
     namespace_packages=['flaskext'],
     zip_safe=False,
     platforms='any',
